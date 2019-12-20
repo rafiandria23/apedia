@@ -56,16 +56,16 @@ const searchFunc = function() {
     let input = document.getElementsByClassName('search-bar');
     let filter = input.value.toLowerCase();
     let articleDiv = document.getElementsByClassName('article-div');
-    let searchItem = articleDiv.getElementsByClassName('article');
 
     // Loop through all titles and hide those that don't match the search query
-    for (let i = 0; i < searchItem.length; i++) {
-        let a = searchItem[i].getElementsByClassName('article-title');
-        if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
-            searchItem[i].style.display = '';
+    for (let i = 0; i < articleDiv.length; i++) {
+        let a = articleDiv[i].getElementsByClassName('article-title');
+        let b = articleDiv[i].getElementsByClassName('article-content');
+        if ((a.innerHTML.toLowerCase().indexOf(filter)) || (b.innerHTML.toLowerCase().indexOf(filter)) > -1) {
+            articleDiv[i].style.display = '';
         }
         else {
-            searchItem[i].style.display = 'none';
+            articleDiv[i].style.display = 'none';
         }
     }
 }
