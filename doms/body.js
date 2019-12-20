@@ -35,11 +35,13 @@ topMenuLinkDiv.appendChild(aboutMe);
 
 // FOOTER
 let footer = document.createElement('footer');
+footer.setAttribute('class', 'col-1');
 
 // FOOTER LOGO & MENU
 let footerLogo = document.createElement('a');
 footerLogo.setAttribute('class', 'footer-logo');
 footerLogo.setAttribute('href', '#');
+footerLogo.innerHTML = "apedia";
 footer.appendChild(footerLogo);
 
 let footerMenuLinkDiv = document.createElement('div');
@@ -57,10 +59,14 @@ let socialIconsDiv = document.createElement('div');
 socialIconsDiv.setAttribute('class', 'social-icons-div');
 footer.appendChild(socialIconsDiv);
 
+//GITHUB SOCIAL ICON
 let githubAnchor = document.createElement('a');
+githubAnchor.setAttribute('class', 'footer-icon');
+
 let githubIcon = document.createElement('i');
-githubIcon.setAttribute('class', 'fab fa-github');
-githubIcon.setAttribute('id', 'github-footer-icon');
+githubIcon.setAttribute('class', 'fab fa-github fa-2x');
+githubAnchor.appendChild(githubIcon);
+socialIconsDiv.appendChild(githubAnchor);
 
 
 // APPENDIX

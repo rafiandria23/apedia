@@ -88,3 +88,47 @@ header {
 .header-right {
     float: right;
 }
+
+
+/* FOOTER STYLING */
+footer {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: auto;
+    padding-bottom: 3%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    line-height: 2.5em;
+}
+
+.footer-menu-link-div {
+    display: block;
+    padding-bottom: 3%;
+}
+
+.footer-menu-link {
+    font-size: 1.1em;
+    line-height: 1.1em;
+    text-decoration: none;
+    color: black;
+}
+
+.footer-menu-link:hover {
+    border-bottom: 1px solid black;
+}
+
+.social-icon-div {
+    display: block;
+}
+
+.footer-icon:hover {
+    
+}
