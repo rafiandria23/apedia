@@ -90,6 +90,24 @@ header {
 }
 
 
+/* MAIN STYLING */
+
+main {
+    margin: auto;
+    padding: 10% 20%;
+}
+
+.article-div {
+
+}
+
+
+
+
+
+
+
+
 /* FOOTER STYLING */
 footer {
     overflow: hidden;
@@ -129,6 +147,11 @@ footer {
     display: block;
 }
 
+.footer-icon {
+    color: black;
+    padding-bottom: 1%;
+}
+
 .footer-icon:hover {
-    
+    border-bottom: 1px solid black;
 }
