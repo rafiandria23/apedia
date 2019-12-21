@@ -54,8 +54,9 @@ main.appendChild(searchBar);
 const searchFunc = function() {
     // Declare variables
     let input = document.getElementsByClassName('search-bar');
-    let filter = input.value.toLowerCase().split(' ');
+    let filter = input[0].value.toLowerCase().split(' ');
     let articleDiv = document.getElementsByClassName('article-div');
+    let footer = document.getElementsByTagName('footer');
 
     // Loop through all titles and hide those that don't match the search query
     for (let i = 0; i < articleDiv.length; i++) {
@@ -73,7 +74,7 @@ const searchFunc = function() {
 
         for (let l = 0; l < contentSearch.length; l++) {
             for (let m = 0; m < filter.length; m++) {
-                if (contentSearch[l].indexOf(filter[k]) > -1) {
+                if (contentSearch[l].indexOf(filter[m]) > -1) {
                     check++;
                 }
             }
@@ -82,7 +83,7 @@ const searchFunc = function() {
         if (check > 0) {
             articleDiv[i].style.display = '';
         }
-        else {
+        else if (check === 0) {
             articleDiv[i].style.display = 'none';
         }
     }
@@ -93,31 +94,26 @@ const searchFunc = function() {
 
 // ARTICLE SECTION
 
-const createArticleDiv = function (className, title, content) {
-    if (className === undefined) {
-        alert('Please provide the article class name.');
-    }   
-    else if (title === undefined) {
-        alert('Please provide the article title.');
-    }
-    else if (className && title === undefined) {
-        alert('Please provide the article class name and title.');
-    }
+const createArticle = function (title, content) {
     
     let articleDiv = document.createElement('div');
-    articleDiv.setAttribute('class', className);
+    articleDiv.setAttribute('class', 'article-div');
     main.appendChild(articleDiv);
     
     let articleTitle = document.createElement('a');
     articleTitle.setAttribute('class', 'article-title');
     articleTitle.innerHTML = title;
     articleDiv.appendChild(articleTitle);
+
+    let articleContent = document.createElement('p');
+    articleContent.setAttribute('class', 'article-content');
+    articleContent.innerHTML = content;
     
     if (content === undefined) {
         return articleDiv;
     }
     else {
-        articleDiv.appendChild(content);
+        articleDiv.appendChild(articleContent);
     }
     
 
@@ -125,13 +121,14 @@ const createArticleDiv = function (className, title, content) {
 }
 
 
-let aboutMeContent = document.createElement('p');
-aboutMeContent.setAttribute('class', 'article-content');
-aboutMeContent.innerHTML = 'Adam Rafiandri is an Aviation Maintenance Electrician graduated from SMK Penerbangan Agkasa Bogor located near the Atang Sendjaja Air Force Base. His passion in Aviation and Programming have brought him to the amazing world of both and also made him always feel fascinated about them.'
 
-let articleAboutMeDiv = createArticleDiv('article-div', 'About Me', aboutMeContent);
+// ABOUT ME
+let aboutMeContent = 'Adam Rafiandri is an Aviation Maintenance Electrician graduated from SMK Penerbangan Agkasa Bogor located near the Atang Sendjaja Air Force Base. His passion in Aviation and Programming have brought him to the amazing world of both and also made him always feel fascinated about them.'
+let articleAboutMeDiv = createArticle('About Me', aboutMeContent);
 
-
+// ABOUT JAVASCRIPT - art1
+let art1Content = 'JavaScript, often abbreviated as JS, is a high-level, just-in-time compiled, object-oriented programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. Source: Wikipedia';
+let art1 = createArticle("What is JavaScript?", art1Content);
 
 
 
@@ -160,7 +157,7 @@ footer.appendChild(footerMenuLinkDiv);
 
 let aboutMeFooter = document.createElement('a');
 aboutMeFooter.setAttribute('class', 'footer-menu-link');
-aboutMeFooter.setAttribute('href', './about-me.html');
+aboutMeFooter.setAttribute('href', 'https://www.linkedin.com/in/adam-rafiandri-b51b69187/');
 aboutMeFooter.innerHTML = 'About Me';
 footerMenuLinkDiv.appendChild(aboutMeFooter);
 
