@@ -28,7 +28,12 @@ mainScript.setAttribute('src', './doms/main-script.js');
 let footerScript = document.createElement('script');
 footerScript.setAttribute('src', './doms/footer.js');
 
-//APPENDIX
+//APPENDIX HEAD
 document.head.appendChild(mainStyle);
 document.head.appendChild(responsiveStyle);
 document.head.appendChild(fontAwesome);
+
+//APPENDIX BODY
+document.body.appendChild(headerScript);
+document.body.appendChild(mainScript);
+document.body.appendChild(footerScript);
