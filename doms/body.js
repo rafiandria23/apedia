@@ -44,7 +44,7 @@ let main = document.createElement('main');
 let searchBar = document.createElement('input');
 searchBar.setAttribute('class', 'search-bar');
 searchBar.setAttribute('id', 'main-search-bar');
-searchBar.setAttribute('type', 'searchBar');
+searchBar.setAttribute('type', 'text');
 searchBar.setAttribute('onkeyup', 'searchFunc()');
 searchBar.setAttribute('placeholder', 'What do you want to learn?');
 searchBar.setAttribute('title', 'Type anything');
@@ -54,14 +54,32 @@ main.appendChild(searchBar);
 const searchFunc = function() {
     // Declare variables
     let input = document.getElementsByClassName('search-bar');
-    let filter = input.value.toLowerCase();
+    let filter = input.value.toLowerCase().split(' ');
     let articleDiv = document.getElementsByClassName('article-div');
 
     // Loop through all titles and hide those that don't match the search query
     for (let i = 0; i < articleDiv.length; i++) {
-        let a = articleDiv[i].getElementsByClassName('article-title');
-        let b = articleDiv[i].getElementsByClassName('article-content');
-        if ((a.innerHTML.toLowerCase().indexOf(filter)) || (b.innerHTML.toLowerCase().indexOf(filter)) > -1) {
+        let check = 0;
+        let titleSearch = articleDiv[i].getElementsByClassName('article-title')[0].innerHTML.toLowerCase().split(' ');
+        let contentSearch = articleDiv[i].getElementsByClassName('article-content')[0].innerHTML.toLowerCase().split(' ');
+
+        for (let j = 0; j < titleSearch.length; j++) {
+            for (let k = 0; k < filter.length; k++) {
+                if (titleSearch[j].indexOf(filter[k]) > -1) {
+                    check++;
+                }
+            }
+        }
+
+        for (let l = 0; l < contentSearch.length; l++) {
+            for (let m = 0; m < filter.length; m++) {
+                if (contentSearch[l].indexOf(filter[k]) > -1) {
+                    check++;
+                }
+            }
+        }
+
+        if (check > 0) {
             articleDiv[i].style.display = '';
         }
         else {
@@ -78,7 +96,7 @@ const searchFunc = function() {
 const createArticleDiv = function (className, title, content) {
     if (className === undefined) {
         alert('Please provide the article class name.');
-    }
+    }   
     else if (title === undefined) {
         alert('Please provide the article title.');
     }
@@ -91,7 +109,7 @@ const createArticleDiv = function (className, title, content) {
     main.appendChild(articleDiv);
     
     let articleTitle = document.createElement('a');
-    articleDiv.setAttribute('class', 'article-title');
+    articleTitle.setAttribute('class', 'article-title');
     articleTitle.innerHTML = title;
     articleDiv.appendChild(articleTitle);
     
