@@ -29,6 +29,6 @@ topMenuLinkDiv.appendChild(categories);
 
 let aboutMe = document.createElement('a')
 aboutMe.setAttribute('class', 'top-menu-link');
-aboutMe.setAttribute('href', '#');
+aboutMe.setAttribute('href', 'https://www.linkedin.com/in/adam-rafiandri-b51b69187/');
 aboutMe.innerHTML = 'About Me';
 topMenuLinkDiv.appendChild(aboutMe);

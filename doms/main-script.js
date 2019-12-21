@@ -85,5 +85,17 @@ let aboutMeContent = 'Adam Rafiandri is an Aviation Maintenance Electrician grad
 let articleAboutMeDiv = createArticle('About Me', aboutMeContent);
 
 // ABOUT JAVASCRIPT - art1
-let art1Content = 'JavaScript, often abbreviated as JS, is a high-level, just-in-time compiled, object-oriented programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. Source: Wikipedia';
+let art1Content = 'JavaScript, often abbreviated as JS, is a high-level, just-in-time compiled, object-oriented programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. Source: Wikipedia.';
 let art1 = createArticle("What is JavaScript?", art1Content);
+
+// ABOUT HTML - art2
+let art2Content = 'Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript. Source: Wikipedia.';
+let art2 = createArticle("What is HTML?", art2Content);
+
+// ABOUT CSS - art3
+let art3Content = 'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. Source: Wikipedia.';
+let art3 = createArticle("What is CSS?", art3Content);
+
+// ABOUT MONGODB - art4
+let art4Content = 'MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License. Source: Wikipedia.';
+let art4 = createArticle("What is MongoDB?", art4Content);
