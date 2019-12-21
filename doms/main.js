@@ -15,6 +15,19 @@ let fontAwesome = document.createElement('script');
 fontAwesome.setAttribute('src', 'https://kit.fontawesome.com/c12db2a1ab.js');
 fontAwesome.setAttribute('crossorigin', 'anonymous');
 
+
+// HEADER INSERTION
+let headerScript = document.createElement('script');
+headerScript.setAttribute('src', './doms/header.js');
+
+// MAIN INSERTION
+let mainScript = document.createElement('script');
+mainScript.setAttribute('src', './doms/main-script.js');
+
+// FOOTER INSERTION
+let footerScript = document.createElement('script');
+footerScript.setAttribute('src', './doms/footer.js');
+
 //APPENDIX
 document.head.appendChild(mainStyle);
 document.head.appendChild(responsiveStyle);
